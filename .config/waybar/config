@@ -1,0 +1,229 @@
+// Waybar main
+[{
+	"layer":	"bottom",
+	"output":	"eDP-1",
+	"position":	"top",
+	"height":	28,
+	"margin-left":	8,
+	"margin-right":	8,
+	"margin-top":	8,
+	"margin-bottom":	0,
+// West side
+	"modules-left":	[
+		"sway/workspaces",
+		"sway/mode",
+		"sway/window"
+	//	"tray"
+	],
+// Middle
+	"modules-center":	[
+	],
+// East side
+	"modules-right":	[
+	//	"pulseaudio",
+	//	"custom/backlight",
+	//	"backlight",
+		"custom/network",
+		"network#wifi",
+		"custom/separator1",
+		"network#wg",
+		"custom/memory",
+		"memory",
+		"custom/diskroot",
+		"disk",
+		"custom/diskhome",
+		"disk#disk2",
+		"custom/cpu",
+		"cpu",
+	//	"temperature",
+		"custom/battery",
+		"battery"
+	//	"clock"
+	],
+// Module configs
+// Workspaces
+	"sway/workspaces":	{
+		"disable-scroll":	true,
+		"all-outputs":	false,
+		"format":	"{name}"
+	},
+// Sway mode
+	"sway/mode":	{
+		"format":	"<span style=\"italic\">{}</span>"
+	},
+// Idle
+//	"idle_inhibitor":	{
+	//	"format":	"{icon}",
+	//	"format-icons":	{
+		//	"activated":	"",
+		//	"deactivated":	""
+	//	},
+	//	"tooltip":	false
+//	},
+// Tray
+//	"tray":	{
+	//	"spacing":	10
+//	},
+// Clock
+//	"clock":	{
+	//	"format":	"{:%Y-%m-%d | %H:%M}",
+	//	"tooltip":	false
+//	},
+// Memory
+	"memory":	{
+		"interval":	5,
+		"format":	"{used:0.1F}GiB",
+		"tooltip":	false
+	},
+// Memory custom label
+	"custom/memory":	{
+		"format":	"RAM",
+		"tooltop":	false
+	},
+// CPU
+	"cpu":	{
+		"interval":	5,
+		"format":	"{load} | {usage}%",
+		"tooltip":	false
+	},
+// CPU temp
+//	"temperature":	{
+	//	"thermal-zone":	1,
+	//	"hwmon-path":	"/sys/class/hwmon/hwmon0/temp1_input",
+	//	"critical-threshold":	70,
+	//	"format":	"{icon} {temperatureC:3}°C",
+	//	"format-icons":	["", "", ""],
+	//	"tooltip":	false
+//	},
+// CPU custom label
+	"custom/cpu":	{
+		"format":	"CPU",
+		"tooltip":	false
+	},
+// Backlight
+//	"backlight":	{
+	//	"format":	"{percent}%",
+	//	"on-scroll-up":	"light -A 2",
+	//	"on-scroll-down":	"light -U 2",
+	//	"tooltip":	false
+//	},
+// Backlight custom label
+//	"custom/backlight":	{
+	//	"format":	"L",
+	//	"tooltip":	false
+//	},
+// Battery
+	"battery":	{
+		"bat":	"BAT1",
+		"interval":	60,
+		"states":	{
+			"critical":	15,
+			"full":	80
+		},
+		"format":	"{capacity}%",
+		"format-charging":	"{capacity}%",
+	//	"format-full-full":	"FULL",
+		"tooltip": false
+	},
+// Battery custom label
+	"custom/battery":	{
+		"format":	"BAT",
+		"tooltip":	false
+	},
+// Network
+	"network#wifi":	{
+		"interface":	"wlan*",
+		"format-wifi":	"ON",
+		"format-linked":	"OFF",
+		"format-disconnected":	"OFF",
+ 		"tooltip":	false
+	},
+// Network custom label
+	"custom/network":	{
+		"format":	"NET",
+		"tooltip":	false
+	},
+// Network custom separator
+	"custom/separator1":	{
+		"format":	"|",
+		"tooltip":	false
+	},
+// Wireguard
+	"network#wg":	{
+		"interface":	"mv**",
+		"interval":	5,
+		"format-ethernet":	"WG:{bandwidthDownBits}",
+		"format-linked":	"OFF",
+		"format-disconnected":	"OFF",
+		"tooltip":	false
+	},
+// Audio
+//	"pulseaudio":	{
+	//	"scroll-step":	5, // %, can be a float
+	//	"format":	"{icon} {volume:3}%",
+	//	"format-muted":	" ----",
+	//	"format-icons":	{
+		//	"headphones":	"",
+		//	"handsfree":	"",
+		//	"headset":	"",
+		//	"phone":	"",
+		//	"portable":	"",
+		//	"car":	"",
+		//	"default":	["", "", ""]
+	//	},
+	//	"on-click":	"pactl set-sink-mute 0 toggle",
+	//	"on-click-right":	"pavucontrol",
+	//	"tooltip":	false
+//	},
+// Disk root
+	"disk":	{
+		"format":	"{free}",
+		"path":	"/",
+		"tooltip":	false
+	},
+// Disk custom label
+	"custom/diskroot":	{
+		"format":	"/",
+		"tooltip":	false
+	},
+// Disk home
+	"disk#disk2":	{
+		"format":	"{free}",
+		"path":	"/home",
+		"tooltip":	false
+	},
+// Disk home custom label
+	"custom/diskhome":	{
+		"format":	"~/",
+		"tooltip":	false
+	}
+},
+// Second output bar
+{
+	"layer":	"bottom",
+	"output":	"DP-1",
+	"position":	"top",
+	"height":	28,
+	"margin-left":	8,
+	"margin-right":	8,
+	"margin-top":	8,
+	"margin-bottom":	0,
+// West side
+	"modules-left":	[
+		"sway/workspaces",
+		"sway/mode",
+		"sway/window"
+	//	"tray"
+	],
+// Workspaces
+	"sway/workspaces":	{
+		"disable-scroll":	true,
+		"all-outputs":	false,
+		"format":	"{name}"
+	},
+// Sway mode
+	"sway/mode":	{
+		"format":	"<span style=\"italic\">{}</span>"
+	}
+	}
+]
