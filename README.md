@@ -1,0 +1,2 @@
+# dotfiles
+wayland setup dotfiles
